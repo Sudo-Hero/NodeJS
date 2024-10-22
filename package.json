@@ -1,0 +1,15 @@
+{
+  "name": "megazom",
+  "version": "1.0.0",
+  "description": "Best ecommerce application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Shivnarayan Kanojiya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "morgan": "^1.10.0"
+  }
+}

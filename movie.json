@@ -1,0 +1,14 @@
+[
+    {
+        "id": 2,
+        "name": "Intersteller",
+        "year": 2014,
+        "genre": "Drama"
+    },
+    {
+        "id": 3,
+        "name": "CrazyPasta",
+        "year": 2012,
+        "genre": "Comedy"
+    }
+]
