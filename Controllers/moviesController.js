@@ -1,6 +1,8 @@
 const fs = require("fs")
 
 let movies = JSON.parse(fs.readFileSync("./movie.json", "utf-8"))
+let welcomePage = fs.readFileSync("./public/welcome.html", "utf-8");
+
 exports.getMovies = (req, res) => {
     res.json({
         status: "success",
@@ -135,4 +137,9 @@ exports.validateReq = (req,res,next) => {
         })
     }
     next();
+}
+
+exports.displayWelcomePage = (req, res) =>{
+    res.setHeader("Content-Type", "text/html")
+    res.send(welcomePage);
 }
