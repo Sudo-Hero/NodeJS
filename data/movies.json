@@ -1,0 +1,125 @@
+[
+  {
+    "name": "The Dark Knight",
+    "description": "Batman raises the stakes in his war on crime with the help of Lt. Jim Gordon and District Attorney Harvey Dent.",
+    "duration": 152,
+    "ratings": 4.9,
+    "totalRating": 45000,
+    "releaseYear": 2008,
+    "releasDate": "2008-07-18T00:00:00.000Z",
+    "createAt": "2024-11-19T00:00:00.000Z",
+    "generes": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "coverImage": "dark_knight.jpg",
+    "actors": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart"
+    ],
+    "price": 12.99
+  },
+  {
+    "name": "Interstellar",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "duration": 169,
+    "ratings": 4.7,
+    "totalRating": 39000,
+    "releaseYear": 2014,
+    "releasDate": "2014-11-07T00:00:00.000Z",
+    "createAt": "2024-11-19T00:00:00.000Z",
+    "generes": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "coverImage": "interstellar.jpg",
+    "actors": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain"
+    ],
+    "price": 14.99
+  },
+  {
+    "name": "The Shawshank Redemption",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "duration": 142,
+    "ratings": 4.9,
+    "totalRating": 61000,
+    "releaseYear": 1994,
+    "releasDate": "1994-10-14T00:00:00.000Z",
+    "createAt": "2024-11-19T00:00:00.000Z",
+    "generes": [
+      "Drama"
+    ],
+    "directors": [
+      "Frank Darabont"
+    ],
+    "coverImage": "shawshank_redemption.jpg",
+    "actors": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton"
+    ],
+    "price": 9.99
+  },
+  {
+    "name": "Avengers: Endgame",
+    "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more to undo Thanos' actions.",
+    "duration": 181,
+    "ratings": 4.6,
+    "totalRating": 55000,
+    "releaseYear": 2019,
+    "releasDate": "2019-04-26T00:00:00.000Z",
+    "createAt": "2024-11-19T00:00:00.000Z",
+    "generes": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "directors": [
+      "Anthony Russo",
+      "Joe Russo"
+    ],
+    "coverImage": "avengers_endgame.jpg",
+    "actors": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Scarlett Johansson"
+    ],
+    "price": 16.99
+  },
+  {
+    "name": "Parasite",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "duration": 132,
+    "ratings": 4.6,
+    "totalRating": 41000,
+    "releaseYear": 2019,
+    "releasDate": "2019-11-08T00:00:00.000Z",
+    "createAt": "2024-11-19T00:00:00.000Z",
+    "generes": [
+      "Drama",
+      "Thriller"
+    ],
+    "directors": [
+      "Bong Joon-ho"
+    ],
+    "coverImage": "parasite.jpg",
+    "actors": [
+      "Kang-ho Song",
+      "Sun-kyun Lee",
+      "Yeo-jeong Jo"
+    ],
+    "price": 10.99
+  }
+]
