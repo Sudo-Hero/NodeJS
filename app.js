@@ -4,6 +4,7 @@ const rateLimit = require("express-rate-limit");
 const moviesRouter = require("./Routes/moviesRoutes");
 const authRouter = require("./Routes/authRouter");
 const userRouter = require("./Routes/userRouter")
+const helmet = require("helmet");
 
 const movieControllers = require("./Controllers/moviesController")
 const errorController = require("./Controllers/errorController")
@@ -30,7 +31,8 @@ let limiter = rateLimit({
     message: "Too many requests from the user. Please wait and try again later!",
 })
 
-app.use(express.json())
+app.use(helmet())
+app.use(express.json({limit: "10kb"}))
 app.use(express.static("./public"))
 app.use(timeStamp)
 if (process.env.NODE_ENV === "development")
