@@ -7,6 +7,7 @@ const userRouter = require("./Routes/userRouter")
 const helmet = require("helmet");
 const sanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean")
+const hpp = require("hpp")
 
 const movieControllers = require("./Controllers/moviesController")
 const errorController = require("./Controllers/errorController")
@@ -27,15 +28,28 @@ const timeStamp = (req, res, next) => {
 
 let limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-	limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
-	standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
-	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+    limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+    standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
     message: "Too many requests from the user. Please wait and try again later!",
 })
 
+app.use(hpp({
+    whitelist: [
+        "duration",
+        "ratings",
+        "totalRating",
+        "releaseYear",
+        "releasDate",
+        "generes",
+        "directors",
+        "actors",
+        "price",
+    ]
+}))
 app.use(helmet())
-app.use(express.json({limit: "10kb"}))
-app.use(sanitize({replaceWith: '_'}));
+app.use(express.json({ limit: "10kb" }))
+app.use(sanitize({ replaceWith: '_' }));
 app.use(xss());
 app.use(express.static("./public"))
 app.use(timeStamp)
