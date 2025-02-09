@@ -22,6 +22,7 @@ exports.signup = AsyncErrorHandler(async (req, res, next) => {
         algorithm: "RS256",
         expiresIn: process.env.LOGIN_EXP,
     })
+
     res.status(200).json({
         newUser,
         token,
