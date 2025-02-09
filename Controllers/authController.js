@@ -48,6 +48,7 @@ exports.signin = AsyncErrorHandler(async (req, res, next) => {
     let user = await User.findOne({ email: req.body.email , active: {$ne: false}});
     if (!user) {
         let err = new CustomError("User not found!", 400)
+        console.log(req.body);
         return next(err);
     }
     let isCorrectPassword = await user.comparePassword(password)

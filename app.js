@@ -5,6 +5,8 @@ const moviesRouter = require("./Routes/moviesRoutes");
 const authRouter = require("./Routes/authRouter");
 const userRouter = require("./Routes/userRouter")
 const helmet = require("helmet");
+const sanitize = require("express-mongo-sanitize");
+const xss = require("xss-clean")
 
 const movieControllers = require("./Controllers/moviesController")
 const errorController = require("./Controllers/errorController")
@@ -33,6 +35,8 @@ let limiter = rateLimit({
 
 app.use(helmet())
 app.use(express.json({limit: "10kb"}))
+app.use(sanitize({replaceWith: '_'}));
+app.use(xss());
 app.use(express.static("./public"))
 app.use(timeStamp)
 if (process.env.NODE_ENV === "development")
