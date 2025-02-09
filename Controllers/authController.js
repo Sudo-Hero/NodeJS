@@ -9,7 +9,7 @@ const publicKey = fs.readFileSync("public.pem", "utf-8")
 const mailer = require("../Utils/Mailer")
 const crypto = require("crypto")
 const bcrypt = require("bcrypt")
-
+const ms = require("ms");
 
 exports.signup = AsyncErrorHandler(async (req, res, next) => {
     let newUser = await User.create(req.body);
@@ -22,6 +22,14 @@ exports.signup = AsyncErrorHandler(async (req, res, next) => {
         algorithm: "RS256",
         expiresIn: process.env.LOGIN_EXP,
     })
+
+    let options ={
+        maxAge: ms(process.env.LOGIN_EXP),
+        httpOnly: true,
+        secure: req.protocol === "https" ? true : false,
+    }
+
+    res.cookie('jwt', token, options);
 
     res.status(200).json({
         newUser,
