@@ -30,7 +30,7 @@ exports.signup = AsyncErrorHandler(async (req, res, next) => {
     }
 
     res.cookie('jwt', token, options);
-
+    user.password = undefined;
     res.status(200).json({
         newUser,
         token,
