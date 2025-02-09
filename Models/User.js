@@ -25,6 +25,10 @@ const userSchema = mongoose.Schema({
         required: [true, "Password field is required!"],
         minlength: 8,
     },
+    active:{
+        type: Boolean,
+        select: false,
+    },
     confirmPassword: {
         type: String,
         required: [true, "Confirmed Password field is required!"],
@@ -53,6 +57,11 @@ userSchema.pre("save", async function (next) {
     this.passwordChangedAt = Math.floor(Date.now() / 1000);
     this.confirmPassword = undefined;
 })
+
+// userSchema.pre(/^find/, function(next){
+//     this.find({active: {$ne: false}});
+//     next();
+// })
 
 userSchema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password);

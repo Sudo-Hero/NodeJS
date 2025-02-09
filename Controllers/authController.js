@@ -36,7 +36,7 @@ exports.signin = AsyncErrorHandler(async (req, res, next) => {
         return next(err);
     }
 
-    let user = await User.findOne({ email: req.body.email })
+    let user = await User.findOne({ email: req.body.email , active: {$ne: false}});
     if (!user) {
         let err = new CustomError("User not found!", 400)
         return next(err);
@@ -70,7 +70,8 @@ exports.authorize = AsyncErrorHandler(async (req, res, next) => {
     //2. Validate token
     let decodedToken = await util.promisify(jwt.verify)(token, publicKey, { algorithm: "RS256" });
     //3. check if user exists
-    let user = await User.findById(decodedToken.id);
+    let user = await User.findOne({_id: decodedToken.id, active: {$ne: false}});
+    console.log(user.email, user.active)
     if (!user) {
         let err = new CustomError("The user does not exist!", 400);
         return next(err)
